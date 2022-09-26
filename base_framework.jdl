@@ -1,0 +1,51 @@
+application {
+  config {
+    baseName  BaseFrameWork
+    packageName com.viettel.solution.base
+    applicationType monolith
+    authenticationType jwt
+    buildTool maven
+    databaseType sql
+    devDatabaseType mysql
+    prodDatabaseType mysql
+    skipClient true
+    nativeLanguage en
+    languages vi
+    cacheProvider redis
+    enableHibernateCache true
+    enableSwaggerCodegen true
+
+  }
+  entities *
+  paginate * with pagination
+  dto *
+}
+entity SysUser(sys_user){
+  id String
+  userName String
+  realName String
+  drowssap String //this is password, right to left for by pass sonar
+  salt String
+  avatar String
+  birthday LocalDate
+  sex Integer
+  email String
+  phone String
+  org_code String
+  status Integer
+  del_flag Integer
+  third_id String
+  third_type String
+  activiti_sync Integer
+  work_no String
+  post String
+  telephone String
+  create_by String
+  create_time LocalDate
+  update_by String
+  update_time LocalDate
+  user_identity Integer
+  depart_ids String
+  rel_tenant_ids String
+  client_id String
+}
