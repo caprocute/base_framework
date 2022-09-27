@@ -1,0 +1,32 @@
+{
+  "baseFrameWorkApp": {
+    "sysDataLog": {
+      "home": {
+        "title": "Sys Data Logs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sys Data Log",
+        "createOrEditLabel": "Create or edit a Sys Data Log",
+        "notFound": "No Sys Data Logs found"
+      },
+      "created": "A new Sys Data Log is created with identifier {{ param }}",
+      "updated": "A Sys Data Log is updated with identifier {{ param }}",
+      "deleted": "A Sys Data Log is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys Data Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Data Log"
+      },
+      "id": "Id",
+      "dataTable": "Data Table",
+      "dataId": "Data Id",
+      "dataContent": "Data Content",
+      "dataVersion": "Data Version",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

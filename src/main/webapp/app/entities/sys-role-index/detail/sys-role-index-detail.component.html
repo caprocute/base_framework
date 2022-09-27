@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysRoleIndex">
+      <h2 data-cy="sysRoleIndexDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.detail.title">Sys Role Index</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.id">Id</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.roleCode">Role Code</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.roleCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.url">Url</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.url }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.component">Component</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.component }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.isRoute">Is Route</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.isRoute }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.priority">Priority</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.priority }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.status">Status</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRoleIndex.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysRoleIndex.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-role-index', sysRoleIndex.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

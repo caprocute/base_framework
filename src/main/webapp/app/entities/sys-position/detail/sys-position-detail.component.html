@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysPosition">
+      <h2 data-cy="sysPositionDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysPosition.detail.title">Sys Position</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.id">Id</span></dt>
+        <dd>
+          <span>{{ sysPosition.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.code">Code</span></dt>
+        <dd>
+          <span>{{ sysPosition.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.name">Name</span></dt>
+        <dd>
+          <span>{{ sysPosition.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.postRank">Post Rank</span></dt>
+        <dd>
+          <span>{{ sysPosition.postRank }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.companyId">Company Id</span></dt>
+        <dd>
+          <span>{{ sysPosition.companyId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.sysOrgCode">Sys Org Code</span></dt>
+        <dd>
+          <span>{{ sysPosition.sysOrgCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysPosition.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysPosition.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysPosition.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysPosition.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPosition.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysPosition.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-position', sysPosition.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "baseFrameWorkApp": {
+    "sysPosition": {
+      "home": {
+        "title": "Sys Positions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sys Position",
+        "createOrEditLabel": "Create or edit a Sys Position",
+        "notFound": "No Sys Positions found"
+      },
+      "created": "A new Sys Position is created with identifier {{ param }}",
+      "updated": "A Sys Position is updated with identifier {{ param }}",
+      "deleted": "A Sys Position is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys Position {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Position"
+      },
+      "id": "Id",
+      "code": "Code",
+      "name": "Name",
+      "postRank": "Post Rank",
+      "companyId": "Company Id",
+      "sysOrgCode": "Sys Org Code",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

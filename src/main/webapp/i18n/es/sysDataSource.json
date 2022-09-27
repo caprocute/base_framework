@@ -1,0 +1,36 @@
+{
+  "baseFrameWorkApp": {
+    "sysDataSource": {
+      "home": {
+        "title": "Sys Data Sources",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sys Data Source",
+        "createOrEditLabel": "Crear o editar Sys Data Source",
+        "notFound": "Ningún Sys Data Sources encontrado"
+      },
+      "created": "Un nuevo Sys Data Source ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sys Data Source ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sys Data Source ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sys Data Source {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Data Source"
+      },
+      "id": "Id",
+      "name": "Name",
+      "remark": "Remark",
+      "dbType": "Db Type",
+      "dbDriver": "Db Driver",
+      "dbUrl": "Db Url",
+      "dbName": "Db Name",
+      "dbUserName": "Db User Name",
+      "dbDrowssap": "Db Drowssap",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

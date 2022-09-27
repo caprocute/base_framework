@@ -1,0 +1,162 @@
+<div>
+  <h2 id="page-heading" data-cy="SysDepartRoleHeading">
+    <span jhiTranslate="baseFrameWorkApp.sysDepartRole.home.title">Sys Depart Roles</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysDepartRole.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-sys-depart-role"
+        [routerLink]="['/sys-depart-role/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysDepartRole.home.createLabel"> Create a new Sys Depart Role </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="sysDepartRoles?.length === 0">
+    <span jhiTranslate="baseFrameWorkApp.sysDepartRole.home.notFound">No Sys Depart Roles found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="sysDepartRoles && sysDepartRoles.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="departID">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.departID">Depart ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="roleName">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.roleName">Role Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="roleCode">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.roleCode">Role Code</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="description">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.description">Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.createBy">Create By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.updateBy">Update By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="tenantId">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDepartRole.tenantId">Tenant Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sysDepartRole of sysDepartRoles; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/sys-depart-role', sysDepartRole.id, 'view']">{{ sysDepartRole.id }}</a>
+          </td>
+          <td>{{ sysDepartRole.departID }}</td>
+          <td>{{ sysDepartRole.roleName }}</td>
+          <td>{{ sysDepartRole.roleCode }}</td>
+          <td>{{ sysDepartRole.description }}</td>
+          <td>{{ sysDepartRole.createBy }}</td>
+          <td>{{ sysDepartRole.createTime | formatMediumDate }}</td>
+          <td>{{ sysDepartRole.updateBy }}</td>
+          <td>{{ sysDepartRole.updateTime | formatMediumDate }}</td>
+          <td>{{ sysDepartRole.tenantId }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/sys-depart-role', sysDepartRole.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/sys-depart-role', sysDepartRole.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(sysDepartRole)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="sysDepartRoles && sysDepartRoles.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

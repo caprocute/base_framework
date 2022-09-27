@@ -1,0 +1,204 @@
+<div>
+  <h2 id="page-heading" data-cy="SysLogHeading">
+    <span jhiTranslate="baseFrameWorkApp.sysLog.home.title">Sys Logs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysLog.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-sys-log"
+        [routerLink]="['/sys-log/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysLog.home.createLabel"> Create a new Sys Log </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="sysLogs?.length === 0">
+    <span jhiTranslate="baseFrameWorkApp.sysLog.home.notFound">No Sys Logs found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="sysLogs && sysLogs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="logType">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.logType">Log Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="logContent">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.logContent">Log Content</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="operateType">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.operateType">Operate Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="userName">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.userName">User Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ip">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.ip">Ip</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="method">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.method">Method</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="requestUrl">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.requestUrl">Request Url</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="requestParam">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.requestParam">Request Param</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="requestType">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.requestType">Request Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="costTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.costTime">Cost Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.createBy">Create By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.updateBy">Update By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="tenantId">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysLog.tenantId">Tenant Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sysLog of sysLogs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/sys-log', sysLog.id, 'view']">{{ sysLog.id }}</a>
+          </td>
+          <td>{{ sysLog.logType }}</td>
+          <td>{{ sysLog.logContent }}</td>
+          <td>{{ sysLog.operateType }}</td>
+          <td>{{ sysLog.userName }}</td>
+          <td>{{ sysLog.ip }}</td>
+          <td>{{ sysLog.method }}</td>
+          <td>{{ sysLog.requestUrl }}</td>
+          <td>{{ sysLog.requestParam }}</td>
+          <td>{{ sysLog.requestType }}</td>
+          <td>{{ sysLog.costTime }}</td>
+          <td>{{ sysLog.createBy }}</td>
+          <td>{{ sysLog.createTime | formatMediumDate }}</td>
+          <td>{{ sysLog.updateBy }}</td>
+          <td>{{ sysLog.updateTime | formatMediumDate }}</td>
+          <td>{{ sysLog.tenantId }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/sys-log', sysLog.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/sys-log', sysLog.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(sysLog)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="sysLogs && sysLogs.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

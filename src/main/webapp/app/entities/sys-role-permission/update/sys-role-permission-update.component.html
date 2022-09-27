@@ -1,0 +1,110 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-sys-role-permission-heading"
+        data-cy="SysRolePermissionCreateUpdateHeading"
+        jhiTranslate="baseFrameWorkApp.sysRolePermission.home.createOrEditLabel"
+      >
+        Create or edit a Sys Role Permission
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysRolePermission.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+          <div *ngIf="editForm.get('id')!.invalid && (editForm.get('id')!.dirty || editForm.get('id')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('id')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysRolePermission.roleId" for="field_roleId">Role Id</label>
+          <input type="text" class="form-control" name="roleId" id="field_roleId" data-cy="roleId" formControlName="roleId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysRolePermission.permissionId" for="field_permissionId"
+            >Permission Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="permissionId"
+            id="field_permissionId"
+            data-cy="permissionId"
+            formControlName="permissionId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysRolePermission.dataRuleIds" for="field_dataRuleIds"
+            >Data Rule Ids</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="dataRuleIds"
+            id="field_dataRuleIds"
+            data-cy="dataRuleIds"
+            formControlName="dataRuleIds"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysRolePermission.operateDate" for="field_operateDate"
+            >Operate Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_operateDate"
+              data-cy="operateDate"
+              type="text"
+              class="form-control"
+              name="operateDate"
+              ngbDatepicker
+              #operateDateDp="ngbDatepicker"
+              formControlName="operateDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="operateDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysRolePermission.operateIp" for="field_operateIp">Operate Ip</label>
+          <input type="text" class="form-control" name="operateIp" id="field_operateIp" data-cy="operateIp" formControlName="operateIp" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

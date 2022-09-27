@@ -1,0 +1,176 @@
+<div>
+  <h2 id="page-heading" data-cy="SysRoleIndexHeading">
+    <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.home.title">Sys Role Indices</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-sys-role-index"
+        [routerLink]="['/sys-role-index/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.home.createLabel"> Create a new Sys Role Index </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="sysRoleIndices?.length === 0">
+    <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.home.notFound">No Sys Role Indices found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="sysRoleIndices && sysRoleIndices.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="roleCode">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.roleCode">Role Code</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="url">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.url">Url</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="component">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.component">Component</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isRoute">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.isRoute">Is Route</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="priority">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.priority">Priority</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.createBy">Create By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.updateBy">Update By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="tenantId">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysRoleIndex.tenantId">Tenant Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sysRoleIndex of sysRoleIndices; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/sys-role-index', sysRoleIndex.id, 'view']">{{ sysRoleIndex.id }}</a>
+          </td>
+          <td>{{ sysRoleIndex.roleCode }}</td>
+          <td>{{ sysRoleIndex.url }}</td>
+          <td>{{ sysRoleIndex.component }}</td>
+          <td>{{ sysRoleIndex.isRoute }}</td>
+          <td>{{ sysRoleIndex.priority }}</td>
+          <td>{{ sysRoleIndex.status }}</td>
+          <td>{{ sysRoleIndex.createBy }}</td>
+          <td>{{ sysRoleIndex.createTime | formatMediumDate }}</td>
+          <td>{{ sysRoleIndex.updateBy }}</td>
+          <td>{{ sysRoleIndex.updateTime | formatMediumDate }}</td>
+          <td>{{ sysRoleIndex.tenantId }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/sys-role-index', sysRoleIndex.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/sys-role-index', sysRoleIndex.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(sysRoleIndex)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="sysRoleIndices && sysRoleIndices.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

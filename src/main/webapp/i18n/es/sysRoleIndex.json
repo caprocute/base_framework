@@ -1,0 +1,34 @@
+{
+  "baseFrameWorkApp": {
+    "sysRoleIndex": {
+      "home": {
+        "title": "Sys Role Indices",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sys Role Index",
+        "createOrEditLabel": "Crear o editar Sys Role Index",
+        "notFound": "Ningún Sys Role Indices encontrado"
+      },
+      "created": "Un nuevo Sys Role Index ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sys Role Index ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sys Role Index ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sys Role Index {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Role Index"
+      },
+      "id": "Id",
+      "roleCode": "Role Code",
+      "url": "Url",
+      "component": "Component",
+      "isRoute": "Is Route",
+      "priority": "Priority",
+      "status": "Status",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

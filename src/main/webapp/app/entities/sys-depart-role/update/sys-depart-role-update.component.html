@@ -1,0 +1,127 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-sys-depart-role-heading"
+        data-cy="SysDepartRoleCreateUpdateHeading"
+        jhiTranslate="baseFrameWorkApp.sysDepartRole.home.createOrEditLabel"
+      >
+        Create or edit a Sys Depart Role
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+          <div *ngIf="editForm.get('id')!.invalid && (editForm.get('id')!.dirty || editForm.get('id')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('id')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.departID" for="field_departID">Depart ID</label>
+          <input type="text" class="form-control" name="departID" id="field_departID" data-cy="departID" formControlName="departID" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.roleName" for="field_roleName">Role Name</label>
+          <input type="text" class="form-control" name="roleName" id="field_roleName" data-cy="roleName" formControlName="roleName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.roleCode" for="field_roleCode">Role Code</label>
+          <input type="text" class="form-control" name="roleCode" id="field_roleCode" data-cy="roleCode" formControlName="roleCode" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.description" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.createBy" for="field_createBy">Create By</label>
+          <input type="text" class="form-control" name="createBy" id="field_createBy" data-cy="createBy" formControlName="createBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.createTime" for="field_createTime">Create Time</label>
+          <div class="input-group">
+            <input
+              id="field_createTime"
+              data-cy="createTime"
+              type="text"
+              class="form-control"
+              name="createTime"
+              ngbDatepicker
+              #createTimeDp="ngbDatepicker"
+              formControlName="createTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="createTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.updateBy" for="field_updateBy">Update By</label>
+          <input type="text" class="form-control" name="updateBy" id="field_updateBy" data-cy="updateBy" formControlName="updateBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.updateTime" for="field_updateTime">Update Time</label>
+          <div class="input-group">
+            <input
+              id="field_updateTime"
+              data-cy="updateTime"
+              type="text"
+              class="form-control"
+              name="updateTime"
+              ngbDatepicker
+              #updateTimeDp="ngbDatepicker"
+              formControlName="updateTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="updateTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDepartRole.tenantId" for="field_tenantId">Tenant Id</label>
+          <input type="text" class="form-control" name="tenantId" id="field_tenantId" data-cy="tenantId" formControlName="tenantId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

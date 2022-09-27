@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysTenant">
+      <h2 data-cy="sysTenantDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysTenant.detail.title">Sys Tenant</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.id">Id</span></dt>
+        <dd>
+          <span>{{ sysTenant.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.name">Name</span></dt>
+        <dd>
+          <span>{{ sysTenant.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.status">Status</span></dt>
+        <dd>
+          <span>{{ sysTenant.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysTenant.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysTenant.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysTenant.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysTenant.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysTenant.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysTenant.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-tenant', sysTenant.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

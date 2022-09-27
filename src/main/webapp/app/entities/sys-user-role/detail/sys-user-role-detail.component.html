@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysUserRole">
+      <h2 data-cy="sysUserRoleDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysUserRole.detail.title">Sys User Role</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUserRole.id">Id</span></dt>
+        <dd>
+          <span>{{ sysUserRole.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUserRole.userId">User Id</span></dt>
+        <dd>
+          <span>{{ sysUserRole.userId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUserRole.roleId">Role Id</span></dt>
+        <dd>
+          <span>{{ sysUserRole.roleId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-user-role', sysUserRole.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+{
+  "baseFrameWorkApp": {
+    "sysPermission": {
+      "home": {
+        "title": "Sys Permissions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sys Permission",
+        "createOrEditLabel": "Create or edit a Sys Permission",
+        "notFound": "No Sys Permissions found"
+      },
+      "created": "A new Sys Permission is created with identifier {{ param }}",
+      "updated": "A Sys Permission is updated with identifier {{ param }}",
+      "deleted": "A Sys Permission is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Permission"
+      },
+      "id": "Id",
+      "parentId": "Parent Id",
+      "name": "Name",
+      "url": "Url",
+      "component": "Component",
+      "isRoute": "Is Route",
+      "componentName": "Component Name",
+      "redirect": "Redirect",
+      "menuType": "Menu Type",
+      "perms": "Perms",
+      "permsType": "Perms Type",
+      "sortNo": "Sort No",
+      "alwaysShow": "Always Show",
+      "icon": "Icon",
+      "isLeaf": "Is Leaf",
+      "keepAlive": "Keep Alive",
+      "hidden": "Hidden",
+      "hideTab": "Hide Tab",
+      "description": "Description",
+      "delFlag": "Del Flag",
+      "ruleFLag": "Rule F Lag",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id",
+      "internalOrExternal": "Internal Or External"
+    }
+  }
+}

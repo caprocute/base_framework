@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysDataSource">
+      <h2 data-cy="sysDataSourceDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysDataSource.detail.title">Sys Data Source</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.id">Id</span></dt>
+        <dd>
+          <span>{{ sysDataSource.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.name">Name</span></dt>
+        <dd>
+          <span>{{ sysDataSource.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.remark">Remark</span></dt>
+        <dd>
+          <span>{{ sysDataSource.remark }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.dbType">Db Type</span></dt>
+        <dd>
+          <span>{{ sysDataSource.dbType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.dbDriver">Db Driver</span></dt>
+        <dd>
+          <span>{{ sysDataSource.dbDriver }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.dbUrl">Db Url</span></dt>
+        <dd>
+          <span>{{ sysDataSource.dbUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.dbName">Db Name</span></dt>
+        <dd>
+          <span>{{ sysDataSource.dbName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.dbUserName">Db User Name</span></dt>
+        <dd>
+          <span>{{ sysDataSource.dbUserName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.dbDrowssap">Db Drowssap</span></dt>
+        <dd>
+          <span>{{ sysDataSource.dbDrowssap }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysDataSource.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysDataSource.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysDataSource.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysDataSource.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDataSource.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysDataSource.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-data-source', sysDataSource.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

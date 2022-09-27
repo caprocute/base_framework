@@ -1,0 +1,234 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-sys-user-heading" data-cy="SysUserCreateUpdateHeading" jhiTranslate="baseFrameWorkApp.sysUser.home.createOrEditLabel">
+        Create or edit a Sys User
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+          <div *ngIf="editForm.get('id')!.invalid && (editForm.get('id')!.dirty || editForm.get('id')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('id')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.userName" for="field_userName">User Name</label>
+          <input type="text" class="form-control" name="userName" id="field_userName" data-cy="userName" formControlName="userName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.realName" for="field_realName">Real Name</label>
+          <input type="text" class="form-control" name="realName" id="field_realName" data-cy="realName" formControlName="realName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.drowSsap" for="field_drowSsap">Drow Ssap</label>
+          <input type="text" class="form-control" name="drowSsap" id="field_drowSsap" data-cy="drowSsap" formControlName="drowSsap" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.salt" for="field_salt">Salt</label>
+          <input type="text" class="form-control" name="salt" id="field_salt" data-cy="salt" formControlName="salt" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.avatar" for="field_avatar">Avatar</label>
+          <input type="text" class="form-control" name="avatar" id="field_avatar" data-cy="avatar" formControlName="avatar" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.birthday" for="field_birthday">Birthday</label>
+          <div class="input-group">
+            <input
+              id="field_birthday"
+              data-cy="birthday"
+              type="text"
+              class="form-control"
+              name="birthday"
+              ngbDatepicker
+              #birthdayDp="ngbDatepicker"
+              formControlName="birthday"
+            />
+            <button type="button" class="btn btn-secondary" (click)="birthdayDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.sex" for="field_sex">Sex</label>
+          <input type="number" class="form-control" name="sex" id="field_sex" data-cy="sex" formControlName="sex" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.email" for="field_email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.phone" for="field_phone">Phone</label>
+          <input type="text" class="form-control" name="phone" id="field_phone" data-cy="phone" formControlName="phone" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.orgCode" for="field_orgCode">Org Code</label>
+          <input type="text" class="form-control" name="orgCode" id="field_orgCode" data-cy="orgCode" formControlName="orgCode" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.status" for="field_status">Status</label>
+          <input type="number" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.delFlag" for="field_delFlag">Del Flag</label>
+          <input type="number" class="form-control" name="delFlag" id="field_delFlag" data-cy="delFlag" formControlName="delFlag" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.thirdId" for="field_thirdId">Third Id</label>
+          <input type="text" class="form-control" name="thirdId" id="field_thirdId" data-cy="thirdId" formControlName="thirdId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.thirdType" for="field_thirdType">Third Type</label>
+          <input type="text" class="form-control" name="thirdType" id="field_thirdType" data-cy="thirdType" formControlName="thirdType" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.activitySync" for="field_activitySync">Activity Sync</label>
+          <input
+            type="number"
+            class="form-control"
+            name="activitySync"
+            id="field_activitySync"
+            data-cy="activitySync"
+            formControlName="activitySync"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.workNo" for="field_workNo">Work No</label>
+          <input type="text" class="form-control" name="workNo" id="field_workNo" data-cy="workNo" formControlName="workNo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.post" for="field_post">Post</label>
+          <input type="text" class="form-control" name="post" id="field_post" data-cy="post" formControlName="post" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.telephone" for="field_telephone">Telephone</label>
+          <input type="text" class="form-control" name="telephone" id="field_telephone" data-cy="telephone" formControlName="telephone" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.createBy" for="field_createBy">Create By</label>
+          <input type="text" class="form-control" name="createBy" id="field_createBy" data-cy="createBy" formControlName="createBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.createTime" for="field_createTime">Create Time</label>
+          <div class="input-group">
+            <input
+              id="field_createTime"
+              data-cy="createTime"
+              type="text"
+              class="form-control"
+              name="createTime"
+              ngbDatepicker
+              #createTimeDp="ngbDatepicker"
+              formControlName="createTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="createTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.updateBy" for="field_updateBy">Update By</label>
+          <input type="text" class="form-control" name="updateBy" id="field_updateBy" data-cy="updateBy" formControlName="updateBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.updateTime" for="field_updateTime">Update Time</label>
+          <div class="input-group">
+            <input
+              id="field_updateTime"
+              data-cy="updateTime"
+              type="text"
+              class="form-control"
+              name="updateTime"
+              ngbDatepicker
+              #updateTimeDp="ngbDatepicker"
+              formControlName="updateTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="updateTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.userIdentity" for="field_userIdentity">User Identity</label>
+          <input
+            type="number"
+            class="form-control"
+            name="userIdentity"
+            id="field_userIdentity"
+            data-cy="userIdentity"
+            formControlName="userIdentity"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.departIds" for="field_departIds">Depart Ids</label>
+          <input type="text" class="form-control" name="departIds" id="field_departIds" data-cy="departIds" formControlName="departIds" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.relTenantIds" for="field_relTenantIds">Rel Tenant Ids</label>
+          <input
+            type="text"
+            class="form-control"
+            name="relTenantIds"
+            id="field_relTenantIds"
+            data-cy="relTenantIds"
+            formControlName="relTenantIds"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysUser.clientId" for="field_clientId">Client Id</label>
+          <input type="text" class="form-control" name="clientId" id="field_clientId" data-cy="clientId" formControlName="clientId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

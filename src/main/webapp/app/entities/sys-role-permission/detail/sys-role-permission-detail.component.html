@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysRolePermission">
+      <h2 data-cy="sysRolePermissionDetailsHeading">
+        <span jhiTranslate="baseFrameWorkApp.sysRolePermission.detail.title">Sys Role Permission</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRolePermission.id">Id</span></dt>
+        <dd>
+          <span>{{ sysRolePermission.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRolePermission.roleId">Role Id</span></dt>
+        <dd>
+          <span>{{ sysRolePermission.roleId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRolePermission.permissionId">Permission Id</span></dt>
+        <dd>
+          <span>{{ sysRolePermission.permissionId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRolePermission.dataRuleIds">Data Rule Ids</span></dt>
+        <dd>
+          <span>{{ sysRolePermission.dataRuleIds }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRolePermission.operateDate">Operate Date</span></dt>
+        <dd>
+          <span>{{ sysRolePermission.operateDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysRolePermission.operateIp">Operate Ip</span></dt>
+        <dd>
+          <span>{{ sysRolePermission.operateIp }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-role-permission', sysRolePermission.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

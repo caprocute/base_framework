@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="floatType" value="float" dbms="mysql"/>
+    <property name="clobType" value="clob" dbms="mysql"/>
+    <property name="blobType" value="longblob" dbms="mysql"/>
+    <property name="uuidType" value="varchar(36)" dbms="mysql"/>
+    <property name="datetimeType" value="datetime(6)" dbms="mysql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927034837_added_entity_SysUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075546_added_entity_SysDataLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075547_added_entity_SysDataSource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075548_added_entity_SysDepart.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075549_added_entity_SysDepartRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075550_added_entity_SysLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075551_added_entity_SysPermission.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075552_added_entity_SysPermissionDataRule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075553_added_entity_SysPosition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075554_added_entity_SysRoleIndex.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075555_added_entity_SysRolePermission.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075556_added_entity_SysTenant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075557_added_entity_SysUserDepart.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220927075558_added_entity_SysUserRole.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysDepartRole">
+      <h2 data-cy="sysDepartRoleDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysDepartRole.detail.title">Sys Depart Role</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.id">Id</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.departID">Depart ID</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.departID }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.roleName">Role Name</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.roleName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.roleCode">Role Code</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.roleCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.description">Description</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepartRole.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysDepartRole.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-depart-role', sysDepartRole.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

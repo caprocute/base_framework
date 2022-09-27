@@ -1,0 +1,132 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-sys-position-heading"
+        data-cy="SysPositionCreateUpdateHeading"
+        jhiTranslate="baseFrameWorkApp.sysPosition.home.createOrEditLabel"
+      >
+        Create or edit a Sys Position
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+          <div *ngIf="editForm.get('id')!.invalid && (editForm.get('id')!.dirty || editForm.get('id')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('id')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.code" for="field_code">Code</label>
+          <input type="text" class="form-control" name="code" id="field_code" data-cy="code" formControlName="code" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.postRank" for="field_postRank">Post Rank</label>
+          <input type="number" class="form-control" name="postRank" id="field_postRank" data-cy="postRank" formControlName="postRank" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.companyId" for="field_companyId">Company Id</label>
+          <input type="text" class="form-control" name="companyId" id="field_companyId" data-cy="companyId" formControlName="companyId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.sysOrgCode" for="field_sysOrgCode">Sys Org Code</label>
+          <input
+            type="text"
+            class="form-control"
+            name="sysOrgCode"
+            id="field_sysOrgCode"
+            data-cy="sysOrgCode"
+            formControlName="sysOrgCode"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.createBy" for="field_createBy">Create By</label>
+          <input type="text" class="form-control" name="createBy" id="field_createBy" data-cy="createBy" formControlName="createBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.createTime" for="field_createTime">Create Time</label>
+          <div class="input-group">
+            <input
+              id="field_createTime"
+              data-cy="createTime"
+              type="text"
+              class="form-control"
+              name="createTime"
+              ngbDatepicker
+              #createTimeDp="ngbDatepicker"
+              formControlName="createTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="createTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.updateBy" for="field_updateBy">Update By</label>
+          <input type="text" class="form-control" name="updateBy" id="field_updateBy" data-cy="updateBy" formControlName="updateBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.updateTime" for="field_updateTime">Update Time</label>
+          <div class="input-group">
+            <input
+              id="field_updateTime"
+              data-cy="updateTime"
+              type="text"
+              class="form-control"
+              name="updateTime"
+              ngbDatepicker
+              #updateTimeDp="ngbDatepicker"
+              formControlName="updateTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="updateTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysPosition.tenantId" for="field_tenantId">Tenant Id</label>
+          <input type="text" class="form-control" name="tenantId" id="field_tenantId" data-cy="tenantId" formControlName="tenantId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

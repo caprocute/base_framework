@@ -1,0 +1,38 @@
+{
+  "baseFrameWorkApp": {
+    "sysLog": {
+      "home": {
+        "title": "Sys Logs",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sys Log",
+        "createOrEditLabel": "Crear o editar Sys Log",
+        "notFound": "Ningún Sys Logs encontrado"
+      },
+      "created": "Un nuevo Sys Log ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sys Log ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sys Log ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sys Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Log"
+      },
+      "id": "Id",
+      "logType": "Log Type",
+      "logContent": "Log Content",
+      "operateType": "Operate Type",
+      "userName": "User Name",
+      "ip": "Ip",
+      "method": "Method",
+      "requestUrl": "Request Url",
+      "requestParam": "Request Param",
+      "requestType": "Request Type",
+      "costTime": "Cost Time",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

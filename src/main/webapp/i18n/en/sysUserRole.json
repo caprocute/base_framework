@@ -1,0 +1,25 @@
+{
+  "baseFrameWorkApp": {
+    "sysUserRole": {
+      "home": {
+        "title": "Sys User Roles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sys User Role",
+        "createOrEditLabel": "Create or edit a Sys User Role",
+        "notFound": "No Sys User Roles found"
+      },
+      "created": "A new Sys User Role is created with identifier {{ param }}",
+      "updated": "A Sys User Role is updated with identifier {{ param }}",
+      "deleted": "A Sys User Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys User Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys User Role"
+      },
+      "id": "Id",
+      "userId": "User Id",
+      "roleId": "Role Id"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "baseFrameWorkApp": {
+    "sysTenant": {
+      "home": {
+        "title": "Sys Tenants",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sys Tenant",
+        "createOrEditLabel": "Crear o editar Sys Tenant",
+        "notFound": "Ningún Sys Tenants encontrado"
+      },
+      "created": "Un nuevo Sys Tenant ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sys Tenant ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sys Tenant ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sys Tenant {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Tenant"
+      },
+      "id": "Id",
+      "name": "Name",
+      "status": "Status",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

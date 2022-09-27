@@ -1,0 +1,25 @@
+{
+  "baseFrameWorkApp": {
+    "sysUserRole": {
+      "home": {
+        "title": "Sys User Roles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Sys User Role",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sys User Role",
+        "notFound": "No Sys User Roles found"
+      },
+      "created": "Một Sys User Role mới được tạo với định danh {{ param }}",
+      "updated": "Một Sys User Role cập nhật với định danh {{ param }}",
+      "deleted": "Một Sys User Role đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sys User Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys User Role"
+      },
+      "id": "Id",
+      "userId": "User Id",
+      "roleId": "Role Id"
+    }
+  }
+}

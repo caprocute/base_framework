@@ -1,0 +1,25 @@
+{
+  "baseFrameWorkApp": {
+    "sysUserDepart": {
+      "home": {
+        "title": "Sys User Departs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Sys User Depart",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sys User Depart",
+        "notFound": "No Sys User Departs found"
+      },
+      "created": "Một Sys User Depart mới được tạo với định danh {{ param }}",
+      "updated": "Một Sys User Depart cập nhật với định danh {{ param }}",
+      "deleted": "Một Sys User Depart đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sys User Depart {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys User Depart"
+      },
+      "id": "Id",
+      "userId": "User Id",
+      "depID": "Dep ID"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "baseFrameWorkApp": {
+    "sysUser": {
+      "home": {
+        "title": "Sys Users",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sys User",
+        "createOrEditLabel": "Crear o editar Sys User",
+        "notFound": "Ningún Sys Users encontrado"
+      },
+      "created": "Un nuevo Sys User ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sys User ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sys User ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sys User {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys User"
+      },
+      "id": "Id",
+      "userName": "User Name",
+      "realName": "Real Name",
+      "drowSsap": "Drow Ssap",
+      "salt": "Salt",
+      "avatar": "Avatar",
+      "birthday": "Birthday",
+      "sex": "Sex",
+      "email": "Email",
+      "phone": "Phone",
+      "orgCode": "Org Code",
+      "status": "Status",
+      "delFlag": "Del Flag",
+      "thirdId": "Third Id",
+      "thirdType": "Third Type",
+      "activitySync": "Activity Sync",
+      "workNo": "Work No",
+      "post": "Post",
+      "telephone": "Telephone",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "userIdentity": "User Identity",
+      "departIds": "Depart Ids",
+      "relTenantIds": "Rel Tenant Ids",
+      "clientId": "Client Id"
+    }
+  }
+}

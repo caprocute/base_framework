@@ -1,0 +1,128 @@
+{
+  "applications": ["BaseFrameWork"],
+  "changelogDate": "20220927075551",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "sys_permission",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "parentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "component",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isRoute",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "componentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "redirect",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "menuType",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "perms",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "permsType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sortNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "alwaysShow",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "icon",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isLeaf",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "keepAlive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "hidden",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "hideTab",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "ruleFLag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "tenantId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "internalOrExternal",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SysPermission",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

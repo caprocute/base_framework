@@ -1,0 +1,190 @@
+<div>
+  <h2 id="page-heading" data-cy="SysDataSourceHeading">
+    <span jhiTranslate="baseFrameWorkApp.sysDataSource.home.title">Sys Data Sources</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysDataSource.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-sys-data-source"
+        [routerLink]="['/sys-data-source/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="baseFrameWorkApp.sysDataSource.home.createLabel"> Create a new Sys Data Source </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="sysDataSources?.length === 0">
+    <span jhiTranslate="baseFrameWorkApp.sysDataSource.home.notFound">No Sys Data Sources found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="sysDataSources && sysDataSources.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="remark">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.remark">Remark</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dbType">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.dbType">Db Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dbDriver">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.dbDriver">Db Driver</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dbUrl">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.dbUrl">Db Url</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dbName">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.dbName">Db Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dbUserName">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.dbUserName">Db User Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dbDrowssap">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.dbDrowssap">Db Drowssap</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.createBy">Create By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateBy">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.updateBy">Update By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="tenantId">
+            <div class="d-flex">
+              <span jhiTranslate="baseFrameWorkApp.sysDataSource.tenantId">Tenant Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sysDataSource of sysDataSources; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/sys-data-source', sysDataSource.id, 'view']">{{ sysDataSource.id }}</a>
+          </td>
+          <td>{{ sysDataSource.name }}</td>
+          <td>{{ sysDataSource.remark }}</td>
+          <td>{{ sysDataSource.dbType }}</td>
+          <td>{{ sysDataSource.dbDriver }}</td>
+          <td>{{ sysDataSource.dbUrl }}</td>
+          <td>{{ sysDataSource.dbName }}</td>
+          <td>{{ sysDataSource.dbUserName }}</td>
+          <td>{{ sysDataSource.dbDrowssap }}</td>
+          <td>{{ sysDataSource.createBy }}</td>
+          <td>{{ sysDataSource.createTime | formatMediumDate }}</td>
+          <td>{{ sysDataSource.updateBy }}</td>
+          <td>{{ sysDataSource.updateTime | formatMediumDate }}</td>
+          <td>{{ sysDataSource.tenantId }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/sys-data-source', sysDataSource.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/sys-data-source', sysDataSource.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(sysDataSource)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="sysDataSources && sysDataSources.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

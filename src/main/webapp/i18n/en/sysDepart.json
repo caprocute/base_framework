@@ -1,0 +1,40 @@
+{
+  "baseFrameWorkApp": {
+    "sysDepart": {
+      "home": {
+        "title": "Sys Departs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sys Depart",
+        "createOrEditLabel": "Create or edit a Sys Depart",
+        "notFound": "No Sys Departs found"
+      },
+      "created": "A new Sys Depart is created with identifier {{ param }}",
+      "updated": "A Sys Depart is updated with identifier {{ param }}",
+      "deleted": "A Sys Depart is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys Depart {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Depart"
+      },
+      "id": "Id",
+      "parentId": "Parent Id",
+      "departName": "Depart Name",
+      "departOrder": "Depart Order",
+      "orgCategory": "Org Category",
+      "orgType": "Org Type",
+      "orgCode": "Org Code",
+      "mobile": "Mobile",
+      "fax": "Fax",
+      "address": "Address",
+      "memo": "Memo",
+      "status": "Status",
+      "delFlag": "Del Flag",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

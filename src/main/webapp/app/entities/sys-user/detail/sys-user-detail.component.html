@@ -1,0 +1,132 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysUser">
+      <h2 data-cy="sysUserDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysUser.detail.title">Sys User</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.id">Id</span></dt>
+        <dd>
+          <span>{{ sysUser.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.userName">User Name</span></dt>
+        <dd>
+          <span>{{ sysUser.userName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.realName">Real Name</span></dt>
+        <dd>
+          <span>{{ sysUser.realName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.drowSsap">Drow Ssap</span></dt>
+        <dd>
+          <span>{{ sysUser.drowSsap }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.salt">Salt</span></dt>
+        <dd>
+          <span>{{ sysUser.salt }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.avatar">Avatar</span></dt>
+        <dd>
+          <span>{{ sysUser.avatar }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.birthday">Birthday</span></dt>
+        <dd>
+          <span>{{ sysUser.birthday | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.sex">Sex</span></dt>
+        <dd>
+          <span>{{ sysUser.sex }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.email">Email</span></dt>
+        <dd>
+          <span>{{ sysUser.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.phone">Phone</span></dt>
+        <dd>
+          <span>{{ sysUser.phone }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.orgCode">Org Code</span></dt>
+        <dd>
+          <span>{{ sysUser.orgCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.status">Status</span></dt>
+        <dd>
+          <span>{{ sysUser.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.delFlag">Del Flag</span></dt>
+        <dd>
+          <span>{{ sysUser.delFlag }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.thirdId">Third Id</span></dt>
+        <dd>
+          <span>{{ sysUser.thirdId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.thirdType">Third Type</span></dt>
+        <dd>
+          <span>{{ sysUser.thirdType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.activitySync">Activity Sync</span></dt>
+        <dd>
+          <span>{{ sysUser.activitySync }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.workNo">Work No</span></dt>
+        <dd>
+          <span>{{ sysUser.workNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.post">Post</span></dt>
+        <dd>
+          <span>{{ sysUser.post }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ sysUser.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysUser.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysUser.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysUser.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysUser.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.userIdentity">User Identity</span></dt>
+        <dd>
+          <span>{{ sysUser.userIdentity }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.departIds">Depart Ids</span></dt>
+        <dd>
+          <span>{{ sysUser.departIds }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.relTenantIds">Rel Tenant Ids</span></dt>
+        <dd>
+          <span>{{ sysUser.relTenantIds }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysUser.clientId">Client Id</span></dt>
+        <dd>
+          <span>{{ sysUser.clientId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-user', sysUser.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "baseFrameWorkApp": {
+    "sysPermissionDataRule": {
+      "home": {
+        "title": "Sys Permission Data Rules",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sys Permission Data Rule",
+        "createOrEditLabel": "Crear o editar Sys Permission Data Rule",
+        "notFound": "Ningún Sys Permission Data Rules encontrado"
+      },
+      "created": "Un nuevo Sys Permission Data Rule ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sys Permission Data Rule ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sys Permission Data Rule ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sys Permission Data Rule {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Permission Data Rule"
+      },
+      "id": "Id",
+      "permissionId": "Permission Id",
+      "ruleName": "Rule Name",
+      "ruleColumn": "Rule Column",
+      "ruleCOnditions": "Rule C Onditions",
+      "ruleValue": "Rule Value",
+      "status": "Status",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

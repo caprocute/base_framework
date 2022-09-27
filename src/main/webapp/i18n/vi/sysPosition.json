@@ -1,0 +1,33 @@
+{
+  "baseFrameWorkApp": {
+    "sysPosition": {
+      "home": {
+        "title": "Sys Positions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Sys Position",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sys Position",
+        "notFound": "No Sys Positions found"
+      },
+      "created": "Một Sys Position mới được tạo với định danh {{ param }}",
+      "updated": "Một Sys Position cập nhật với định danh {{ param }}",
+      "deleted": "Một Sys Position đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sys Position {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Position"
+      },
+      "id": "Id",
+      "code": "Code",
+      "name": "Name",
+      "postRank": "Post Rank",
+      "companyId": "Company Id",
+      "sysOrgCode": "Sys Org Code",
+      "createBy": "Create By",
+      "createTime": "Create Time",
+      "updateBy": "Update By",
+      "updateTime": "Update Time",
+      "tenantId": "Tenant Id"
+    }
+  }
+}

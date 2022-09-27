@@ -1,0 +1,28 @@
+{
+  "baseFrameWorkApp": {
+    "sysRolePermission": {
+      "home": {
+        "title": "Sys Role Permissions",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sys Role Permission",
+        "createOrEditLabel": "Crear o editar Sys Role Permission",
+        "notFound": "Ningún Sys Role Permissions encontrado"
+      },
+      "created": "Un nuevo Sys Role Permission ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sys Role Permission ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sys Role Permission ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sys Role Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Role Permission"
+      },
+      "id": "Id",
+      "roleId": "Role Id",
+      "permissionId": "Permission Id",
+      "dataRuleIds": "Data Rule Ids",
+      "operateDate": "Operate Date",
+      "operateIp": "Operate Ip"
+    }
+  }
+}

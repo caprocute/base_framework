@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysPermissionDataRule">
+      <h2 data-cy="sysPermissionDataRuleDetailsHeading">
+        <span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.detail.title">Sys Permission Data Rule</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.id">Id</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.permissionId">Permission Id</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.permissionId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.ruleName">Rule Name</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.ruleName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.ruleColumn">Rule Column</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.ruleColumn }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.ruleCOnditions">Rule C Onditions</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.ruleCOnditions }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.ruleValue">Rule Value</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.ruleValue }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.status">Status</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermissionDataRule.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysPermissionDataRule.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-permission-data-rule', sysPermissionDataRule.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

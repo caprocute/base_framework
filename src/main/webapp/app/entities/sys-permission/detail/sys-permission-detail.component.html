@@ -1,0 +1,132 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysPermission">
+      <h2 data-cy="sysPermissionDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysPermission.detail.title">Sys Permission</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.id">Id</span></dt>
+        <dd>
+          <span>{{ sysPermission.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.parentId">Parent Id</span></dt>
+        <dd>
+          <span>{{ sysPermission.parentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.name">Name</span></dt>
+        <dd>
+          <span>{{ sysPermission.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.url">Url</span></dt>
+        <dd>
+          <span>{{ sysPermission.url }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.component">Component</span></dt>
+        <dd>
+          <span>{{ sysPermission.component }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.isRoute">Is Route</span></dt>
+        <dd>
+          <span>{{ sysPermission.isRoute }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.componentName">Component Name</span></dt>
+        <dd>
+          <span>{{ sysPermission.componentName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.redirect">Redirect</span></dt>
+        <dd>
+          <span>{{ sysPermission.redirect }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.menuType">Menu Type</span></dt>
+        <dd>
+          <span>{{ sysPermission.menuType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.perms">Perms</span></dt>
+        <dd>
+          <span>{{ sysPermission.perms }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.permsType">Perms Type</span></dt>
+        <dd>
+          <span>{{ sysPermission.permsType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.sortNo">Sort No</span></dt>
+        <dd>
+          <span>{{ sysPermission.sortNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.alwaysShow">Always Show</span></dt>
+        <dd>
+          <span>{{ sysPermission.alwaysShow }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.icon">Icon</span></dt>
+        <dd>
+          <span>{{ sysPermission.icon }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.isLeaf">Is Leaf</span></dt>
+        <dd>
+          <span>{{ sysPermission.isLeaf }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.keepAlive">Keep Alive</span></dt>
+        <dd>
+          <span>{{ sysPermission.keepAlive }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.hidden">Hidden</span></dt>
+        <dd>
+          <span>{{ sysPermission.hidden }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.hideTab">Hide Tab</span></dt>
+        <dd>
+          <span>{{ sysPermission.hideTab }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.description">Description</span></dt>
+        <dd>
+          <span>{{ sysPermission.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.delFlag">Del Flag</span></dt>
+        <dd>
+          <span>{{ sysPermission.delFlag }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.ruleFLag">Rule F Lag</span></dt>
+        <dd>
+          <span>{{ sysPermission.ruleFLag }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysPermission.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysPermission.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysPermission.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysPermission.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysPermission.tenantId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysPermission.internalOrExternal">Internal Or External</span></dt>
+        <dd>
+          <span>{{ sysPermission.internalOrExternal }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-permission', sysPermission.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

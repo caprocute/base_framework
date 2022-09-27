@@ -1,51 +1,261 @@
 application {
   config {
-    baseName  BaseFrameWork
-    packageName com.viettel.solution.base
-    applicationType monolith
-    authenticationType jwt
-    buildTool maven
-    databaseType sql
-    devDatabaseType mysql
-    prodDatabaseType mysql
-    skipClient true
-    nativeLanguage en
-    languages vi
-    cacheProvider redis
-    enableHibernateCache true
+    baseName  BaseFrameWork,
+    packageName com.viettel.solution.base,
+    applicationType monolith,
+    authenticationType jwt,
+    buildTool maven,
+    databaseType sql,
+    devDatabaseType mysql,
+    prodDatabaseType mysql,
+    skipClient false,
+    nativeLanguage en,
+    languages [vi,es],
+    cacheProvider redis,
+    enableHibernateCache true,
     enableSwaggerCodegen true
-
   }
-  entities *
+  entities * except  SysDepartPermission,SysDepartRoleUser,SysDepartRolePermission
   paginate * with pagination
-  dto *
 }
 entity SysUser(sys_user){
-  id String
-  userName String
-  realName String
-  drowssap String //this is password, right to left for by pass sonar
-  salt String
-  avatar String
-  birthday LocalDate
-  sex Integer
-  email String
-  phone String
-  org_code String
-  status Integer
-  del_flag Integer
-  third_id String
-  third_type String
-  activiti_sync Integer
-  work_no String
-  post String
-  telephone String
-  create_by String
-  create_time LocalDate
-  update_by String
-  update_time LocalDate
-  user_identity Integer
-  depart_ids String
-  rel_tenant_ids String
-  client_id String
+      @Id id String required
+userName String
+realName String
+drowSsap String //this is password, right to left for by pass sonar
+salt String
+avatar String
+birthday LocalDate
+sex Integer
+email String
+phone String
+orgCode String
+status Integer
+delFlag Integer
+thirdId String
+thirdType String
+activitySync Integer
+workNo String
+post String
+telephone String
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+userIdentity Integer
+departIds String
+relTenantIds String
+clientId String
 }
+
+entity SysDataLog(sys_data_log){
+@Id id String required
+dataTable String
+dataId String
+dataContent String
+dataVersion Integer
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+
+entity SysDataSource(sys_data_source){
+@Id id String required
+name String
+remark String
+dbType String
+dbDriver String
+dbUrl String
+dbName String
+dbUserName String
+dbDrowssap String
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+
+entity SysDepart(sys_depart){
+@Id id String required
+parentId String
+departName String  required
+departOrder Integer
+orgCategory String required
+orgType String
+orgCode String required
+mobile String
+fax String
+address String
+memo String
+status Boolean
+delFlag Boolean
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+
+entity SysDepartPermission(sys_depart_permission){
+@Id id String required
+departID String
+permissionId String
+dataRuleIds String
+}
+
+entity SysDepartRole(sys_depart_role){
+@Id id String required
+departID String
+roleName String
+roleCode String
+description String
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+
+entity SysDepartRolePermission(sys_depart_role_permission){
+@Id id String required
+departID String
+roleId String
+permissionId String
+dataRuleIds String
+operateDate LocalDate
+operateIp String
+}
+
+entity SysDepartRoleUser(sys_depart_role_user){
+@Id id String required
+userId String
+droleID String
+}
+
+entity SysLog(sys_log){
+@Id id String required
+logType Integer
+logContent String
+operateType String
+userName String
+ip String
+method String
+requestUrl String
+requestParam  String
+requestType String
+costTime Long
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+
+entity SysPermission(sys_permission){
+@Id id String required
+parentId String
+name String
+url String
+component String
+isRoute Boolean
+componentName String
+redirect String
+menuType Integer
+perms String
+permsType String
+sortNo String
+alwaysShow Boolean
+icon String
+isLeaf Boolean
+keepAlive Boolean
+hidden Boolean
+hideTab Boolean
+description String
+delFlag Boolean
+ruleFLag Boolean
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+internalOrExternal Boolean
+}
+
+
+entity SysPermissionDataRule(sys_permission_data_rule){
+@Id id String required
+permissionId String
+ruleName String
+ruleColumn String
+ruleCOnditions String
+ruleValue String
+status Integer
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+
+entity SysPosition(sys_position) {
+@Id id String required
+code String
+name String
+postRank Integer
+companyId String
+sysOrgCode String
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+
+entity SysRoleIndex(sys_role_index){
+@Id id String required
+roleCode String
+url String
+component String
+isRoute Boolean
+priority Integer
+status Integer
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+entity SysRolePermission(sys_role_permission){
+@Id id String required
+roleId String
+permissionId String
+dataRuleIds String
+operateDate LocalDate
+operateIp String
+}
+entity SysTenant(sys_tenant){
+@Id id String required
+name String
+status Integer
+createBy String
+createTime LocalDate
+updateBy String
+updateTime LocalDate
+tenantId String
+}
+entity SysUserDepart(sys_user_depart){
+@Id id String required
+userId String
+depID String
+}
+entity SysUserRole(sys_user_role){
+@Id id String required
+userId String
+roleId String
+}
+
+dto * with mapstruct
+service * with serviceImpl

@@ -1,0 +1,84 @@
+{
+  "applications": ["BaseFrameWork"],
+  "changelogDate": "20220927075550",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "sys_log",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "logType",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "logContent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "operateType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ip",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requestUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requestParam",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requestType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "costTime",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "tenantId",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SysLog",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

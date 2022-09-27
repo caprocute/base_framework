@@ -1,0 +1,25 @@
+{
+  "baseFrameWorkApp": {
+    "sysUserDepart": {
+      "home": {
+        "title": "Sys User Departs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sys User Depart",
+        "createOrEditLabel": "Create or edit a Sys User Depart",
+        "notFound": "No Sys User Departs found"
+      },
+      "created": "A new Sys User Depart is created with identifier {{ param }}",
+      "updated": "A Sys User Depart is updated with identifier {{ param }}",
+      "deleted": "A Sys User Depart is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys User Depart {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys User Depart"
+      },
+      "id": "Id",
+      "userId": "User Id",
+      "depID": "Dep ID"
+    }
+  }
+}

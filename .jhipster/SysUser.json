@@ -1,0 +1,128 @@
+{
+  "applications": ["BaseFrameWork"],
+  "changelogDate": "20220927034837",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "sys_user",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "realName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "drowSsap",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avatar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "birthday",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sex",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "delFlag",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "thirdId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thirdType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activitySync",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "workNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "post",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "userIdentity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "departIds",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "relTenantIds",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientId",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SysUser",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

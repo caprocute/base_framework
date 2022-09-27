@@ -1,0 +1,154 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-sys-data-source-heading"
+        data-cy="SysDataSourceCreateUpdateHeading"
+        jhiTranslate="baseFrameWorkApp.sysDataSource.home.createOrEditLabel"
+      >
+        Create or edit a Sys Data Source
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.id" for="field_id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="editForm.get('id')!.value != null"
+          />
+          <div *ngIf="editForm.get('id')!.invalid && (editForm.get('id')!.dirty || editForm.get('id')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('id')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.remark" for="field_remark">Remark</label>
+          <input type="text" class="form-control" name="remark" id="field_remark" data-cy="remark" formControlName="remark" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.dbType" for="field_dbType">Db Type</label>
+          <input type="text" class="form-control" name="dbType" id="field_dbType" data-cy="dbType" formControlName="dbType" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.dbDriver" for="field_dbDriver">Db Driver</label>
+          <input type="text" class="form-control" name="dbDriver" id="field_dbDriver" data-cy="dbDriver" formControlName="dbDriver" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.dbUrl" for="field_dbUrl">Db Url</label>
+          <input type="text" class="form-control" name="dbUrl" id="field_dbUrl" data-cy="dbUrl" formControlName="dbUrl" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.dbName" for="field_dbName">Db Name</label>
+          <input type="text" class="form-control" name="dbName" id="field_dbName" data-cy="dbName" formControlName="dbName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.dbUserName" for="field_dbUserName">Db User Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="dbUserName"
+            id="field_dbUserName"
+            data-cy="dbUserName"
+            formControlName="dbUserName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.dbDrowssap" for="field_dbDrowssap">Db Drowssap</label>
+          <input
+            type="text"
+            class="form-control"
+            name="dbDrowssap"
+            id="field_dbDrowssap"
+            data-cy="dbDrowssap"
+            formControlName="dbDrowssap"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.createBy" for="field_createBy">Create By</label>
+          <input type="text" class="form-control" name="createBy" id="field_createBy" data-cy="createBy" formControlName="createBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.createTime" for="field_createTime">Create Time</label>
+          <div class="input-group">
+            <input
+              id="field_createTime"
+              data-cy="createTime"
+              type="text"
+              class="form-control"
+              name="createTime"
+              ngbDatepicker
+              #createTimeDp="ngbDatepicker"
+              formControlName="createTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="createTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.updateBy" for="field_updateBy">Update By</label>
+          <input type="text" class="form-control" name="updateBy" id="field_updateBy" data-cy="updateBy" formControlName="updateBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.updateTime" for="field_updateTime">Update Time</label>
+          <div class="input-group">
+            <input
+              id="field_updateTime"
+              data-cy="updateTime"
+              type="text"
+              class="form-control"
+              name="updateTime"
+              ngbDatepicker
+              #updateTimeDp="ngbDatepicker"
+              formControlName="updateTime"
+            />
+            <button type="button" class="btn btn-secondary" (click)="updateTimeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="baseFrameWorkApp.sysDataSource.tenantId" for="field_tenantId">Tenant Id</label>
+          <input type="text" class="form-control" name="tenantId" id="field_tenantId" data-cy="tenantId" formControlName="tenantId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

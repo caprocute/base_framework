@@ -1,0 +1,44 @@
+{
+  "applications": ["BaseFrameWork"],
+  "changelogDate": "20220927075555",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "sys_role_permission",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "roleId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "permissionId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataRuleIds",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "operateDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "operateIp",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SysRolePermission",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysLog">
+      <h2 data-cy="sysLogDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysLog.detail.title">Sys Log</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.id">Id</span></dt>
+        <dd>
+          <span>{{ sysLog.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.logType">Log Type</span></dt>
+        <dd>
+          <span>{{ sysLog.logType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.logContent">Log Content</span></dt>
+        <dd>
+          <span>{{ sysLog.logContent }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.operateType">Operate Type</span></dt>
+        <dd>
+          <span>{{ sysLog.operateType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.userName">User Name</span></dt>
+        <dd>
+          <span>{{ sysLog.userName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.ip">Ip</span></dt>
+        <dd>
+          <span>{{ sysLog.ip }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.method">Method</span></dt>
+        <dd>
+          <span>{{ sysLog.method }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.requestUrl">Request Url</span></dt>
+        <dd>
+          <span>{{ sysLog.requestUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.requestParam">Request Param</span></dt>
+        <dd>
+          <span>{{ sysLog.requestParam }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.requestType">Request Type</span></dt>
+        <dd>
+          <span>{{ sysLog.requestType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.costTime">Cost Time</span></dt>
+        <dd>
+          <span>{{ sysLog.costTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysLog.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysLog.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysLog.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysLog.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysLog.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysLog.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-log', sysLog.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

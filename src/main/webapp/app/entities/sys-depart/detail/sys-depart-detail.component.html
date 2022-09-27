@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sysDepart">
+      <h2 data-cy="sysDepartDetailsHeading"><span jhiTranslate="baseFrameWorkApp.sysDepart.detail.title">Sys Depart</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.id">Id</span></dt>
+        <dd>
+          <span>{{ sysDepart.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.parentId">Parent Id</span></dt>
+        <dd>
+          <span>{{ sysDepart.parentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.departName">Depart Name</span></dt>
+        <dd>
+          <span>{{ sysDepart.departName }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.departOrder">Depart Order</span></dt>
+        <dd>
+          <span>{{ sysDepart.departOrder }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.orgCategory">Org Category</span></dt>
+        <dd>
+          <span>{{ sysDepart.orgCategory }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.orgType">Org Type</span></dt>
+        <dd>
+          <span>{{ sysDepart.orgType }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.orgCode">Org Code</span></dt>
+        <dd>
+          <span>{{ sysDepart.orgCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.mobile">Mobile</span></dt>
+        <dd>
+          <span>{{ sysDepart.mobile }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.fax">Fax</span></dt>
+        <dd>
+          <span>{{ sysDepart.fax }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.address">Address</span></dt>
+        <dd>
+          <span>{{ sysDepart.address }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.memo">Memo</span></dt>
+        <dd>
+          <span>{{ sysDepart.memo }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.status">Status</span></dt>
+        <dd>
+          <span>{{ sysDepart.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.delFlag">Del Flag</span></dt>
+        <dd>
+          <span>{{ sysDepart.delFlag }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.createBy">Create By</span></dt>
+        <dd>
+          <span>{{ sysDepart.createBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ sysDepart.createTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.updateBy">Update By</span></dt>
+        <dd>
+          <span>{{ sysDepart.updateBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ sysDepart.updateTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="baseFrameWorkApp.sysDepart.tenantId">Tenant Id</span></dt>
+        <dd>
+          <span>{{ sysDepart.tenantId }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sys-depart', sysDepart.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
